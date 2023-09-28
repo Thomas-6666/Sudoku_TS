@@ -1,7 +1,12 @@
-console.log("Je suis le frontend")
+/* /// <reference lib="dom"> /> */
 
-function logCustom(text: string){
-    console.log(text);
+const ws = new WebSocket("ws://localhost:8080");
+ws.onopen = () => ws.send("salut");
+ws.onmessage = (event: MessageEvent) => {
+    console.log(event.data);
+    if (event.data === "reload"){
+        location.reload()
+    }
 }
 
-logCustom("toto")
+console.log("Frontend chargé");

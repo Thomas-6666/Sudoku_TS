@@ -6,6 +6,7 @@
     "start": "bun src/index.ts",
     "dev": "bun --watch src/index.ts",
     "start:backend": "bun run src/backend/index.ts",
+    "dev:backend": "bun --minify --watch build src/backend/index.ts --outdir www/js",
     "build:front": "bun --minify build src/frontend/index.ts --outdir www/js",
     "dev:front": "bun --minify --watch build src/frontend/index.ts --outdir www/js"
   },
