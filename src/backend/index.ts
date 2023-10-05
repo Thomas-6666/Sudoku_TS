@@ -11,7 +11,7 @@ const watcher: FSWatcher = watch(
     {recursive: true},
     (event: WatchEventType, data: string | Error | undefined) => {
         console.log("Something changed !");
-        wsClients.forEach(ws: ServerWebSocket) => ws.send("reload")
+        wsClients.forEach((ws: ServerWebSocket) => ws.send("reload"))
     }
 )
 process.on("SIGINT", () => watcher.close());
@@ -42,10 +42,10 @@ const server = Bun.serve({
             wsClients.delete(ws)
         },
         message(ws: ServerWebSocket, message: string) {
-            console.log(`Message recevied from "${ws.remoteAddress}": "${message}"`);
+            console.log(`Message recevied from ${ws.remoteAddress}: ${message}`);
             ws.send("Well received");
         }
     }
 });
 
-console.log(`HTTP Server listening on ${server.hostname}:${server.port}`);
+console.log(`HTTP Server listening on http://${server.hostname}:${server.port}`);
