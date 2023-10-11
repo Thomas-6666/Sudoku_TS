@@ -84,7 +84,7 @@ function drawDomain(i: number, j: number) {
     const y = j * cellSize + cellPadding
 
     for (let k = 1; k <= 9; k++) {
-        const vk = domain.includes(k) && !values.includes(k) ? k : null
+        const vk = domain.includes(k) && !values.includes(k) ? k : null //Si k est également dans l'autre liste on n'affiche pas le chiffre
         const vi = (k - 1) % 3
         const vj = Math.floor((k - 1) / 3)
         const vx = x + valueStep * vi
@@ -134,18 +134,17 @@ function toogle(v: number) {
     if (selectedCell) {
         let i = selectedCell[0]
         let j = selectedCell[1]
-        let pos = cellDomains[j][i].indexOf(v)
+        let pos = cellDomains[j][i].indexOf(v) //Récupère la position du chiffre tapé dans la case selectionnée
         let x = i - (i % 3)
         let y = j - (j % 3)
 
-        if (cellValues[j][i][pos] === null) {
-            //TODO
+        if (cellValues[j][i][pos] === null) { //Desaffecte v d'une case
             for (let n = 0; n < 3; n++) {
                 cellValues[j][x + n][pos] = null
                 cellValues[y + n][i][pos] = null
             }
             cellValues[j][i][pos] = cellDomains[j][i][pos]
-        } else {
+        } else { //Affecte v une case
             for (let n = 0; n < 3; n++) {
                 cellValues[j][x + n][pos] = cellDomains[j][x + n][pos]
                 cellValues[y + n][i][pos] = cellDomains[y + n][i][pos]
