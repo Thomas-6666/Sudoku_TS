@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    background-color: aliceblue;
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+    font-family: Arial, serif;
+}
+
+.content {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding: 1% 2%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+}
+
+canvas {
+    outline: thin solid black;
+    border-radius: 2%;
+}
+
+canvas:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
