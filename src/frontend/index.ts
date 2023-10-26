@@ -1,4 +1,4 @@
-/// <reference lib="dom" />
+/*/// <reference lib="dom" />*/
 
 import { wsInit, SudokuUI, eventHandlersInit } from "./io"
 import type { SudokuDomain, SudokuValues, SudokuCell } from "./SudokuTypes"
