@@ -49,4 +49,4 @@ const server = Bun.serve({
         }
     }
 })
-console.log(`HTTP Server listening on http://${server.hostname}:${server.port}`)
+console.log(`HTTP Server listening on ${server.hostname}:${server.port}`)
